@@ -1,0 +1,303 @@
+﻿@page
+@model PetroMap.Pages.IndexModel
+@{
+    ViewData["Title"] = "PetroMap";
+}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="~/js/site.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <div class="aviso">
+            <img src="Images/aviso.png" alt="Aviso" />
+            <p>Seu dispositivo possui uma tela pequena. Recomendamos visualizar este site em um dispositivo com tela maior.</p>
+        </div>
+        <header>
+            <img id="fotoFundo" src="Images/telaFundo.png" alt="Tela Fundo" />
+            <button id="informacao" class="btn btn-primary" onclick="location.href='/Informacao'">Informações Técnicas</button>
+            <button id="btnLogo" class="btn btn-secondary" onclick="location.href='/'"></button>
+        </header>
+        <main>
+            <div class="boas">
+                <h1>Bem vindos ao PetroMap! </h1>
+                <br />
+                <p>
+                    Transformando dados em direção
+                </p>
+                <img src="Images/mapaSapinhoa.png" alt="Alternate Text" />
+            </div>
+            <div class="carrossel">
+            </div>
+            <div class="theFather">
+                <div class="areaMap">
+                    <div id="areaFiltro">
+                        <div id="amarelo2"></div>
+                        <h2>Filtros do Mapa: </h2>
+                    </div>
+                    <div class="areaFiltro">
+                        <input type="text" id="nomeFilter" placeholder="Nome">
+                        <input type="text" id="cadastroFilter" placeholder="Cadastro">
+                        <input type="number" id="tipoFilter" placeholder="Tipo" min="1" max="10">
+                        <select id="categoriaFilter">
+                            <option value="" selected>Categoria</option>
+                            <option value="DESENVOLVIMENTO">DESENVOLVIMENTO</option>
+                            <option value="ESPECIAL">ESPECIAL</option>
+                            <option value="ESTRATIGRÁFICO">ESTRATIGRÁFICO</option>
+                            <option value="EXTENSÃO">EXTENSÃO</option>
+                            <option value="INJEÇÃO">INJEÇÃO</option>
+                            <option value="JAZIDA">JAZIDA</option>
+                            <option value="PIONEIRO">PIONEIRO</option>
+                        </select>
+                        <select id="situacaoFilter">
+                            <option value="" selected>Situação</option>
+                            <option value="ABANDONADO">ABANDONADO</option>
+                            <option value="ARRASADO">ARRASADO</option>
+                            <option value="CEDIDO">CEDIDO</option>
+                            <option value="DEVOLVIDO">DEVOLVIDO</option>
+                            <option value="EM AVALIAÇÃO">EM AVALIAÇÃO</option>
+                            <option value="EM COMPLETAÇÃO">EM COMPLETAÇÃO</option>
+                            <option value="EM INTERVENÇÃO">EM INTERVENÇÃO</option>
+                            <option value="EM OBSERVAÇÃO">EM OBSERVAÇÃO</option>
+                            <option value="EM PERFURAÇÃO">EM PERFURAÇÃO</option>
+                            <option value="EQUIPADO">EQUIPADO</option>
+                            <option value="FECHADO">FECHADO</option>
+                            <option value="INJETANDO">INJETANDO</option>
+                            <option value="OPERANDO">OPERANDO</option>
+                            <option value="PRODUZINDO">PRODUZINDO</option>
+                            <option value="PRODUZINDO E INJETANDO">PRODUZINDO E INJETANDO</option>
+                            <option value="OUTRO">OUTRO</option>
+                        </select>
+
+                        <button type="button" id="btnFiltrar" onclick="filtrarMarcadores()">FILTRAR</button>
+                        <button type="button" id="btnLimpar" onclick="limparFiltro()">LIMPAR FILTROS</button>
+
+                        <br />
+
+                        <p> Clique nos marcadores no mapa abaixo para ver os detalhes do poço:</p>
+                    </div>
+                    <div id="map">
+                    </div>
+                </div>
+                <script>
+                    var coordenadas = @Html.Raw(Model.CoordenadasJson);
+                    var info = @Html.Raw(Model.InfosJson);
+
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const key = 'VUOmBIcfvdX0cBlTvbPp';
+                        const map = L.map('map').setView([-24.802311, -45.229008], 7);
+
+                        L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`, {
+                            tileSize: 512,
+                            zoomOffset: -1,
+                            minZoom: 1,
+                            crossOrigin: true
+                        }).addTo(map);
+
+                        map.setMinZoom(7);
+                        map.setMaxZoom(15);
+
+                        var Icone = L.icon({
+                            iconUrl: 'Images/flag.png',
+                            iconSize: [25, 25],
+                            iconAnchor: [12, 41]
+                        });
+
+                        var IconeSelecionado = L.icon({
+                            iconUrl: 'Images/flagVermelha.png',
+                            iconSize: [25, 25],
+                            iconAnchor: [12, 41]
+                        });
+
+                        var todosMarcadores = [];
+
+                        function CriarMarcadores() {
+                            for (var i = 0; i < coordenadas.length; i++) {
+                                var Latitude = coordenadas[i].Latitude;
+                                var Longitude = coordenadas[i].Longitude;
+                                var marcadorInfo = info[i];
+
+                                var marcador = L.marker([Latitude, Longitude], { icon: Icone }).addTo(map);
+
+                                marcador.bindPopup(`<strong>LATITUDE:</strong> ${Latitude}<br><strong>LONGITUDE:</strong> ${Longitude}`, { offset: [0, -40] });
+
+                                marcador.on('click', (function (marcador, marcadorInfo) {
+                                    return function () {
+                                        todosMarcadores.forEach(m => m.marcador.setIcon(Icone));
+                                        marcador.setIcon(IconeSelecionado);
+
+                                        document.getElementById('txtNome').value = marcadorInfo.Nome;
+                                        document.getElementById('txtCadastro').value = marcadorInfo.Cadastro;
+                                        document.getElementById('txtEstado').value = marcadorInfo.Estado;
+                                        document.getElementById('txtBacia').value = marcadorInfo.Bacia;
+                                        document.getElementById('txtBloco').value = marcadorInfo.Bloco;
+                                        document.getElementById('txtCampo').value = marcadorInfo.Campo;
+                                        document.getElementById('txtTipo').value = marcadorInfo.Tipo;
+                                        document.getElementById('txtReclassificacao').value = marcadorInfo.Reclassificacao;
+                                        document.getElementById('txtSituacao').value = marcadorInfo.Situacao;
+                                        document.getElementById('txtInicio').value = marcadorInfo.Inicio;
+                                        document.getElementById('txtTermino').value = marcadorInfo.Termino;
+                                        document.getElementById('txtConclusao').value = marcadorInfo.Conclusao;
+                                        document.getElementById('txtLamina').value = marcadorInfo.Lamina;
+                                    };
+                                })(marcador, marcadorInfo));
+
+                                todosMarcadores.push({
+                                    marcador: marcador,
+                                    nome: marcadorInfo.Nome,
+                                    cadastro: marcadorInfo.Cadastro,
+                                    tipo: marcadorInfo.Tipo,
+                                    categoria: marcadorInfo.Categoria,
+                                    situacao: marcadorInfo.Situacao
+                                });
+                            }
+                        }
+
+                        function filtrarMarcadores() {
+                            const nomeFiltro = document.getElementById('nomeFilter').value.toLowerCase();
+                            const cadastroFiltro = document.getElementById('cadastroFilter').value.toLowerCase();
+                            const tipoFiltro = document.getElementById('tipoFilter').value.trim().toLowerCase();
+                            const categoriaFiltro = document.getElementById('categoriaFilter').value.toLowerCase();
+                            const situacaoFiltro = document.getElementById('situacaoFilter').value.toLowerCase();
+
+                            map.eachLayer(layer => {
+                                if (layer instanceof L.Marker) {
+                                    map.removeLayer(layer);
+                                }
+                            });
+
+                            const filtrados = todosMarcadores.filter(item =>
+                                (nomeFiltro === "" || item.nome.toLowerCase().includes(nomeFiltro)) &&
+                                (cadastroFiltro === "" || item.cadastro.toLowerCase().includes(cadastroFiltro)) &&
+                                (tipoFiltro === "" || item.tipo.toLowerCase() === tipoFiltro) &&
+                                (categoriaFiltro === "" || item.categoria.toLowerCase() === categoriaFiltro) &&
+                                (situacaoFiltro === "" || item.situacao.toLowerCase() === situacaoFiltro)
+                            );
+
+                            filtrados.forEach(item => item.marcador.addTo(map));
+                        }
+
+                        function limparFiltro() {
+                            document.getElementById('nomeFilter').value = "";
+                            document.getElementById('cadastroFilter').value = "";
+                            document.getElementById('tipoFilter').value = "";
+                            document.getElementById('categoriaFilter').value = "";
+                            document.getElementById('situacaoFilter').value = "";
+
+                            todosMarcadores.forEach(item => item.marcador.setIcon(Icone));
+                            filtrarMarcadores();
+                        }
+
+                        window.CriarMarcadores = CriarMarcadores;
+                        window.filtrarMarcadores = filtrarMarcadores;
+                        window.limparFiltro = limparFiltro;
+
+                        CriarMarcadores();
+                    });
+                </script>
+                <div class="areaCaixas">
+                    <div id="pocoEscolhido">
+                        <div id="amarelo"></div>
+                        <h2>Detalhes do Poço: </h2>
+                        <input type="text" id="txtNome" />
+                    </div>
+                    <div id="containerCaixas">
+                        <div class="txtTitulo">
+                            Cadastro
+                            <div class="txtInfo">
+                                <input type="text" id="txtCadastro"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Estado
+                            <div class="txtInfo">
+                                <input type="text" id="txtEstado"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Bacia
+                            <div class="txtInfo">
+                                <input type="text" id="txtBacia"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Bloco
+                            <div class="txtInfo">
+                                <input type="text" id="txtBloco"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Campo
+                            <div class="txtInfo">
+                                <input type="text" id="txtCampo"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Tipo
+                            <div class="txtInfo">
+                                <input type="text" id="txtTipo"/>
+                            </div>
+                        </div>
+                        <a href="https://comunicabaciadesantos.petrobras.com.br/glossario" target="_blank" id="glossario"> Clique aqui para ver o glossário.</a>
+                    </div>
+                    <div id="containerCaixas2">
+                        <div class="txtTitulo">
+                            Reclassif.
+                            <div class="txtInfo">
+                                <input type="text" id="txtReclassificacao"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Situação
+                            <div class="txtInfo">
+                                <input type="text" id="txtSituacao"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Início
+                            <div class="txtInfo">
+                                <input type="text" id="txtInicio"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Término
+                            <div class="txtInfo">
+                                <input type="text" id="txtTermino"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Conclusão
+                            <div class="txtInfo">
+                                <input type="text" id="txtConclusao"/>
+                            </div>
+                        </div>
+                        <div class="txtTitulo">
+                            Lâmina
+                            <div class="txtInfo">
+                                <input type="text" id="txtLamina"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>
+            Desenvolvido pela turma do PPJA-M1TI-22 de Santos
+            <br />
+            @@2023
+        </p>
+    </footer>
+</body>
+</html>

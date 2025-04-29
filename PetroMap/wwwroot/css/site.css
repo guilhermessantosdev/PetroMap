@@ -1,0 +1,1234 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+header {
+    background-color: #010054;
+    height: auto;
+    width: 100vw;
+}
+
+#fotoFundo {
+    width: 100vw;
+    height: auto;
+}
+
+#informacao {
+    position: absolute;
+    top: 3%;
+    right: 7%;
+    background-color: #fdc82f;
+    border-radius: 30px;
+    padding: 0.4%;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#btnLogo {
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    left: 1.8%;
+    width: 13vw;
+    height: 6vh;
+    background-color: transparent;
+}
+/* =========================================  Bloqueio  ===============================================  */
+
+.aviso p {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .aviso {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .aviso {
+        display: none; /* Oculta a div de aviso em telas maiores */
+    }
+}
+
+/* =========================================  Boas-Vindas  ===============================================  */
+
+.boas {
+    width: 100vw;
+    height: 30vh;
+    background-color: #010054;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    .boas h1 {
+        margin-top: 4%;
+        color: #fdc82f;
+        margin-left: 8%;
+    }
+
+    .boas p {
+        color: white;
+        margin-left: 8%;
+        line-height: 32px;
+        flex: 1;
+    }
+
+    .boas img {
+        width: 25vh;
+        height: auto;
+        flex: 1;
+        margin-left: 20%;
+    }
+
+/* ========================================= Carrossel e Detalhes do Poço ===============================================  */
+
+.areaFiltro {
+    width: 40vw;
+    margin-left: 6%;
+    margin-top: 4%;
+}
+
+input::placeholder {
+    color: black;
+}
+
+
+.areaFiltro input {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    border: 2px solid black;
+}
+
+.areaFiltro p {
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 1%;
+    margin: 1%;
+    color: #010054;
+}
+
+#glossario {
+    font-size: 0.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+#categoriaFilter {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    border: 2px solid black;
+}
+
+#situacaoFilter {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    border: 2px solid black;
+}
+
+#btnFiltrar {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    background-color: #010054;
+    color: white;
+    width: 6vw;
+    cursor: pointer;
+}
+
+#btnLimpar {
+    width: 10vw;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 25px;
+    padding: 1%;
+    margin: 1%;
+    margin-top: 2%;
+    background-color: #010054;
+    color: white;
+    cursor: pointer;
+}
+
+
+.theFather {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+}
+
+.areaMap {
+    float: left;
+    width: 45%;
+    height: auto;
+}
+
+.areaCaixas {
+    height: auto;
+    float: left;
+    width: 55%;
+}
+
+#areaFiltro {
+    width: 80%;
+    height: 5vh;
+    margin-left: 7%;
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+}
+
+    #areaFiltro #amarelo2 {
+        background-color: #FDC82F;
+        width: 10px;
+        height: 5vh;
+    }
+
+    #areaFiltro h2 {
+        color: #010054;
+        margin-left: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+
+#map {
+    margin-top: 3%;
+    width: 40vw;
+    height: 50vh;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#pocoEscolhido {
+    width: 80%;
+    height: 5vh;
+    margin-left: 3%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+}
+
+    #pocoEscolhido #amarelo {
+        background-color: #FDC82F;
+        width: 10px;
+        height: 5vh;
+    }
+
+    #pocoEscolhido h2 {
+        color: #010054;
+        margin-left: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    #pocoEscolhido #txtNome {
+        background-color: white;
+        margin-left: 2%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: black;
+    }
+
+#containerCaixas {
+    gap: 10px;
+    margin-top: 2%;
+    width: 15vw;
+    height: 50vh;
+    display: grid;
+    justify-content: left;
+    padding: 2%;
+    float: left;
+}
+
+#containerCaixas2 {
+    gap: 10px;
+    margin-top: 2%;
+    margin-left: 16%;
+    width: 15vw;
+    height: 50vh;
+    display: grid;
+    justify-content: left;
+    padding: 2%;
+    float: left;
+}
+
+.txtTitulo {
+    border-radius: 25px;
+    background-color: #010054;
+    width: 25vw;
+    height: 5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 300%;
+    margin-bottom: 5%;
+}
+
+
+.txtInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #fff;
+    border: #00b542 2px solid;
+    width: 18vw;
+    height: 4.6vh;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    text-align: left;
+    float: right;
+}
+
+.txtInfo, #txtTipo, #txtCadastro, #txtEstado, #txtBacia, #txtBloco, #txtCampo, #txtInicio, #txtTermino, #txtConclusao, #txtLamina {
+    width: 18vw;
+    font-size: 1.1rem;
+    text-align: center;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+}
+
+    .txtInfo #txtSituacao, #txtReclassificacao {
+        text-align: center;
+        font-size: 0.8rem;
+        width: 17vw;
+        background-color: white;
+        color: black;
+    }
+
+#irDados {
+    width: 100vw;
+    height: 8vh;
+    margin-left: 48%;
+    font-size: 1rem;
+}
+
+a:visited {
+    color: #010054;
+    text-decoration: none;
+}
+
+
+
+/* =========================================  Informações Técnicas  ===============================================  */
+
+.info {
+    width: 100vw;
+    height: 70vh;
+    font-size: 1.3rem;
+}
+
+#tracoAmarelo {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloInfo {
+    display: flex;
+    color: white;
+    background-color: #010054;
+    height: 15vh;
+    align-items: center;
+}
+
+#textoEimg {
+    display: flex;
+    align-items: center;
+    margin-left: 3%;
+}
+
+#textoInfo {
+    width: 44vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    #textoInfo p {
+        flex: 1;
+        font-size: 1.1rem;
+        text-align: justify;
+        margin-left: 14%;
+        color: #010054;
+        width: 20vw;
+        height: 40vh;
+        line-height: 25px;
+    }
+
+.slider {
+    margin: 0 auto;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+    margin-left: 5%;
+    margin-top: 5%;
+    border-radius: 25px;
+}
+
+.slides {
+    width: 400%;
+    height: 400px;
+    display: flex;
+}
+
+    .slides input {
+        display: none;
+    }
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 1s;
+}
+
+    .slide img {
+        width: 800px;
+    }
+
+.manual-navigation {
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn {
+    border: 2px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+    .manual-btn:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .manual-btn:hover {
+        background-color: #fff;
+    }
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -75%;
+}
+
+.navigation-auto div {
+    border: 2px solid #010054;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 800px;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+    .navigation-auto div:not(:last-child) {
+        margin-right: 40px;
+    }
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #fff;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #fff;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #fff;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4 {
+    background-color: #fff;
+}
+
+#fiapoamarelo {
+    position: absolute;
+    width: 500px;
+    height: 60vh;
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: #FDC82F;
+    border-radius: 150px;
+    transform: rotate(30deg);
+    margin-left: 90%;
+    margin-top: 8%;
+}
+
+#fiapoverde {
+    position: absolute;
+    width: 500px;
+    height: 60vh;
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: #00b542;
+    border-radius: 150px;
+    transform: rotate(30deg);
+    margin-left: 90%;
+    margin-top: 2%;
+}
+
+/* =========================================  Sapinhoá  ===============================================  */
+
+.sapinhoa {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 3%;
+}
+
+#tracoAmarelo2 {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloSapinhoa {
+    display: flex;
+    color: #010054;
+    height: 15vh;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+
+#containerS {
+    gap: 30px;
+    margin-left: 7%;
+    margin-top: 2%;
+    width: 550px;
+    height: 610px;
+    display: grid;
+    justify-content: left;
+    margin-left: 12%;
+    float: left;
+}
+
+
+#infoS {
+    border-radius: 25px;
+    background-color: #010054;
+    width: 30vw;
+    height: 5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 220%;
+}
+
+.info2 {
+    border-radius: 25px;
+    background-color: #fff;
+    border: #00b542 2px solid;
+    width: 12vw;
+    height: 4.5vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: black;
+    text-align: center;
+    float: right;
+}
+
+#containerS2 {
+    gap: 30px;
+    margin-top: 2%;
+    margin-left: 6%;
+    left: 80%;
+    width: 550px;
+    height: 300px;
+    display: grid;
+    justify-content: left;
+    float: left;
+}
+
+#containerS3 {
+    border: #010054 3px solid;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 23vw;
+    align-items: center;
+    height: 230px;
+    float: left;
+    margin-left: 6%;
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#caixas {
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    height: 20px;
+}
+
+    #caixas h2 {
+        width: auto;
+        border-bottom: 2px solid #010054;
+    }
+
+/* =========================================  Localização  ===============================================  */
+
+.localizacao {
+    width: 100vw;
+    height: 100vh;
+}
+
+#tracoAmarelo3 {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloLocalizacao {
+    display: flex;
+    color: #010054;
+    height: 15vh;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#textoLocal {
+    text-indent: 3ch;
+    width: 80vw;
+    margin-left: 6%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 2.5ch;
+    color: #010054;
+}
+
+#imgLocal {
+    margin-top: 4%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+    #imgLocal img {
+        width: 40vw;
+        height: auto;
+        align-self: center;
+    }
+
+    #imgLocal p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        text-align: justify;
+        line-height: 2.5ch;
+        color: #010054;
+        padding: 1%;
+    }
+
+#fiapoamarelo2 {
+    position: absolute;
+    width: 500px;
+    height: 60vh;
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: #FDC82F;
+    border-radius: 150px;
+    transform: rotate(30deg);
+    margin-left: 90%;
+    margin-top: 6%;
+}
+
+#fiapoverde2 {
+    position: absolute;
+    width: 500px;
+    height: 60vh;
+    background-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    border-color: #00b542;
+    border-radius: 150px;
+    transform: rotate(30deg);
+    margin-left: 90%;
+    margin-top: 2%;
+}
+
+/* ========================================= Sistema de Produção e Escoamento  ===============================================  */
+
+
+.sistema {
+    width: 100vw;
+    height: 100vh;
+}
+
+#tracoAmarelo4 {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloSistema {
+    display: flex;
+    color: #010054;
+    height: 15vh;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#textoSistema {
+    text-indent: 3ch;
+    width: 85vw;
+    margin-left: 6%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 2.5ch;
+    color: #010054;
+}
+
+
+#container3 {
+    background-color: #010054;
+    border-radius: 25px;
+    gap: 25px;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    width: 30vw;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+    padding: 3%;
+}
+
+#caixasS {
+    background-color: transparent;
+    color: #fff;
+    height: 2vh;
+    text-align: center;
+}
+
+#lblData {
+    width: 110%;
+    border-bottom: 2px solid white;
+}
+
+#lblData2 {
+    width: 100%;
+    border-bottom: 2px solid white;
+}
+
+
+#caixas2 {
+    background-color: transparent;
+    color: #fff;
+    height: 2vh;
+    text-align: center;
+}
+
+    #caixas2 h2 {
+        width: 121%;
+        border-bottom: 2px solid white;
+    }
+
+    #caixas2 span {
+        color: #010054;
+    }
+
+.tamletra {
+    font-size: 1.2rem;
+}
+
+#titulo {
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #010054;
+    font-style: bold;
+    margin-left: 4%;
+}
+
+#titulo2 {
+    margin-left: 3%;
+    font-size: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: #010054;
+    font-style: bold;
+}
+
+#container4 {
+    background-color: #010054;
+    border-radius: 25px;
+    gap: 25px;
+    display: grid;
+    grid-template-columns: 120px 120px 120px 150px;
+    width: 40vw;
+    align-items: center;
+    justify-content: center;
+    height: 28vh;
+    margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+    padding: 3%;
+}
+
+#numpocos {
+    font-style: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#capacidade {
+    font-style: bold;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#testelayout {
+    width: auto;
+    box-sizing: border-box;
+    margin-right: 6%;
+}
+
+#testelayout2 {
+    width: auto;
+    box-sizing: border-box;
+}
+
+#layoutpai {
+    margin-top: 5%;
+    display: flex;
+    width: 100vw;
+    height: 45vh;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ========================================= Geologia da Área e Reservatórios ===============================================  */
+
+.geologia {
+    width: 100vw;
+    height: 90vh;
+}
+
+#tracoAmarelo5 {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloGeologia {
+    display: flex;
+    color: #010054;
+    height: 15vh;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+
+#textoGeologia {
+    text-indent: 3ch;
+    width: 85vw;
+    margin-left: 6%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 2.5ch;
+    color: #010054;
+}
+
+#headerG {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-style: bold;
+    grid-area: headerG;
+}
+
+    #headerG h2 {
+        width: 100%;
+        border-bottom: 2px solid white;
+    }
+
+#rodapeG {
+    width: 8vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #010054;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    grid-area: rodapeG;
+}
+
+
+#containerG1 {
+    background-color: #010054;
+    border-radius: 25px;
+    gap: 25px;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    width: 30vw;
+    align-items: center;
+    justify-content: center;
+    height: 30vh;
+    float: left;
+    margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+    padding: 1%;
+    grid-template-areas: 'headerG headerG'
+        'caixas caixas'
+        'caixas caixas'
+        'rodapeG rodapeG';
+}
+
+#caixasG {
+    background-color: transparent;
+    color: #fff;
+    height: 20px;
+    text-align: center;
+}
+
+#caixasG2 {
+    background-color: transparent;
+    color: #fff;
+    height: 20px;
+    text-align: center;
+}
+
+.tamletra {
+    font-size: 1.2rem;
+}
+
+#tituloG {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #010054;
+}
+
+#tituloG2 {
+    margin-left: 8%;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #010054;
+}
+
+#containerG2 {
+    background-color: #010054;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    width: 32vw;
+    align-items: center;
+    justify-content: center;
+    height: 28vh;
+    float: left;
+    margin-top: 4%;
+    font-family: 'Roboto', sans-serif;
+    padding: 1%;
+    grid-template-areas: 'headerG headerG'
+        'caixasG2 caixasG2'
+        'caixasG2 caixasG2'
+        'rodapeG rodapeG';
+}
+
+#volumes {
+    margin-left: 8%;
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    text-align: center;
+}
+
+#prod {
+    font-family: 'Roboto', sans-serif;
+    font-style: bold;
+    text-align: center;
+}
+
+
+
+#layoutG {
+    width: auto;
+    box-sizing: border-box;
+    margin-right: 6%;
+}
+
+#layoutG2 {
+    width: auto;
+    box-sizing: border-box;
+}
+
+#layoutGpai {
+    margin-top: 5%;
+    display: flex;
+    width: 100vw;
+    height: 45vh;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ========================================= Produção do Campo de Sapinhoá  ===============================================  */
+
+.producao {
+    width: 100vw;
+    height: 90vh;
+}
+
+#tracoAmarelo6 {
+    margin-left: 6%;
+    margin-right: 2.5%;
+    width: 0.5vw;
+    height: 50px;
+    background-color: #FDC82F;
+}
+
+#tituloProducao {
+    display: flex;
+    color: #010054;
+    height: 15vh;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+#imgProducao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    #imgProducao img {
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+/* ========================================= Footer  ===============================================  */
+
+footer {
+    width: 100vw;
+    height: 8vh;
+    background-color: #010054;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    footer p {
+        color: white;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        width: fit-content;
+    }
+
+
+
+/* ========================================= Media Query ===============================================  */
+
+
+@media screen and (max-width: 1199px) {
+    .aviso {
+        background-color: white;
+        color: #333;
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 9999;
+    }
+
+        .aviso img {
+            margin-top: 20%;
+            max-width: 50%;
+        }
+
+        .aviso p {
+            font-size: 3rem;
+            color: black;
+            width: 90%;
+            margin-top: 4%;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+    .tudo {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 1500px) and (max-width: 1919px) {
+    .theFather {
+        height: 100vh;
+    }
+
+    #pocoEscolhido h2 {
+        width: 300px;
+    }
+
+    #pocoEscolhido #txtNome {
+        width: 20vw;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: black;
+    }
+
+    .info {
+        height: 75vh;
+    }
+
+
+    .txtTitulo {
+        line-height: 260%;
+    }
+
+    #textoInfo p {
+        font-size: 1rem;
+        width: 40vw;
+        margin-right: 6%;
+    }
+
+    .sapinhoa {
+        height: 110vh;
+    }
+
+    .localizacao {
+        height: 110vh;
+    }
+
+    .sistema {
+        height: 100vh;
+    }
+
+    .geologia {
+        height: 90vh;
+    }
+
+    .producao {
+        height: 100vh;
+    }
+
+    #containerS3 {
+        border: #010054 3px solid;
+        border-radius: 25px;
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 25vw;
+        align-items: center;
+        height: 230px;
+        float: left;
+        margin-left: 6%;
+        margin-top: 2%;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #caixas {
+        background-color: transparent;
+        color: black;
+        text-align: center;
+        height: 20px;
+    }
+
+        #caixas h2 {
+            width: auto;
+            border-bottom: 2px solid #010054;
+        }
+}
+
+@media only screen and (min-width: 1920px) {
+    .theFather {
+        height: 95vh;
+    }
+
+    .info {
+        height: 70vh;
+    }
+
+    .sapinhoa {
+        height: 90vh;
+    }
+
+    .localizacao {
+        height: 95vh;
+    }
+
+    .sistema {
+        height: 85vh;
+    }
+
+    .geologia {
+        height: 80vh;
+    }
+
+    .producao {
+        height: 90vh;
+    }
+}

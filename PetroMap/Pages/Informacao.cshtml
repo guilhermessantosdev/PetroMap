@@ -1,0 +1,340 @@
+﻿@page
+@model PetroMap.Pages.InformacaoModel
+@{
+    ViewData["Title"] = "Informações Técnicas";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="~/js/site.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <div class="aviso">
+
+            <img src="Images/aviso.png" alt="Alternate Text" />
+            <p>Seu dispositivo possui uma tela pequena. Recomendamos visualizar este site em um dispositivo com tela maior. </p>
+        </div>
+        <div class="tudo">
+            <header>
+                <img id="fotoFundo" src="Images/telaFundo.png" alt="Alternate Text" />
+                <button id="informacao" class="btn btn-primary" onclick="location.href='/Informacao'">Informações Técnicas</button>
+                <button id="btnLogo" class="btn btn-secondary" onclick="location.href='/'"></button>
+
+            </header>
+            <main>
+                <div class="info">
+                    <div id="tituloInfo">
+                        <div id="tracoAmarelo"></div>
+                        <h2>Informações Técnicas </h2>
+                    </div>
+                    <div id="textoEimg">
+                        <div id="imgInfo">
+                            <div class="slider">
+                                <div class="slides">
+                                    <input type="radio" name="radio-btn" id="radio1">
+                                    <input type="radio" name="radio-btn" id="radio2">
+                                    <input type="radio" name="radio-btn" id="radio3">
+                                    <input type="radio" name="radio-btn" id="radio4">
+                                    <div class="slide first">
+                                        <img src="Images/carrossel1.jpg" alt="Imagem 1" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="Images/carrossel2.jpg" alt="Imagem 2" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="Images/carrossel3.jpg" alt="Imagem 3" />
+                                    </div>
+                                    <div class="slide">
+                                        <img src="Images/carrossel4.jpg" alt="Imagem 4" />
+                                    </div>
+                                    <div class="navigation-auto">
+                                        <div class="auto-btn1"></div>
+                                        <div class="auto-btn2"></div>
+                                        <div class="auto-btn3"></div>
+                                        <div class="auto-btn4"></div>
+                                    </div>
+                                </div>
+                                <div class="manual-navigation">
+                                    <label for="radio1" class="manual-btn"></label>
+                                    <label for="radio2" class="manual-btn"></label>
+                                    <label for="radio3" class="manual-btn"></label>
+                                    <label for="radio4" class="manual-btn"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script src="~/js/site.js"></script>
+
+                        <div id="textoInfo">
+
+                            <p style="text-indent: 10%;">
+                                Em janeiro de 2013, o Campo de Sapinhoá produziu seu
+                                primeiro óleo através da FPSO Cidade de São Paulo, uma das
+                                primeiras unidades a operar no pré-sal brasileiro e a plataforma
+                                mais distante da costa, localizada a 320km, na Bacia de Santos.
+                                Ao longo destes dez anos, o ativo alcançou grandes resultados,
+                                com a produção total de 665 milhões de barris de óleo
+                                produzidos e a exportação de cerca de 11 bilhões de metros
+                                cúbicos de gás natural. Atualmente, Sapinhoá é o terceiro maior
+                                campo produtor do país, com o consórcio formado pela Repsol
+                                Sinopec (25%), em conjunto com a operadora Petrobras (45%) e
+                                com a Shell (30%).
+
+                                Sua produção é de cerca de 170 mil barris de petróleo por dia,
+                                gerada através de 17 poços produtores conectados ao FPSO
+                                Cidade de São Paulo e FPSO Cidade de Ilhabela, situada na
+                                região norte do campo, onde está localizado o poço SPH-7D, que
+                                chegou a ser considerado o melhor poço do Brasil e um dos
+                                melhores do mundo, com produção de 42 mil barris de petróleo
+                                por dia.
+
+                                Esta trajetória reforça a posição estratégica da Repsol Sinopec
+                                nas áreas de maior potencial do pré-sal brasileiro, gerando
+                                riqueza para o país e produzindo a energia necessária para o
+                                bem-estar da nossa sociedade.
+                            </p>
+                        </div>
+                        <div id="fiapoamarelo"></div>
+                        <div id="fiapoverde"></div>
+                    </div>
+                </div>
+                <div class="sapinhoa">
+                    <div id="tituloSapinhoa">
+                        <div id="tracoAmarelo2"></div>
+                        <h2>Sapinhoá </h2>
+                    </div>
+                    <div id="containerS">
+                        <div id="infoS">
+                            Nº do Contrato<div class="info2">48610.003884/2000</div>
+                        </div>
+                        <div id="infoS">
+                            Operador do Contrato<div class="info2">Petróleo Brasileiro S.A.</div>
+                        </div>
+                        <div id="infoS">
+                            Estado<div class="info2">São Paulo</div>
+                        </div>
+                        <div id="infoS">
+                            Bacia<div class="info2">Santos</div>
+                        </div>
+                        <div id="infoS">
+                            Localização<div class="info2">Mar</div>
+                        </div>
+                        <div id="infoS">
+                            Lâmina d’água<div class="info2">2140m</div>
+                        </div>
+                        <div id="infoS">
+                            Fluído principal<div class="info2">Óleo</div>
+                        </div>
+                        <div id="infoS">
+                            Área<div class="info2">233 km²</div>
+                        </div>
+                    </div>
+                    <div id="containerS3">
+                        <div id="caixas">
+                            <h2>Concessionário</h2>
+                        </div>
+                        <div id="caixas">
+                            <h2>Percentual (%)</h2>
+                        </div>
+                        <div id="caixas">Petróleo Brasileiro S.A</div>
+                        <div id="caixas">45%</div>
+                        <div id="caixas">BG E&P Brasil</div>
+                        <div id="caixas">30%</div>
+                        <div id="caixas">Repsol-Sinopec Brasil</div>
+                        <div id="caixas">25%</div>
+                    </div>
+
+                    <div id="containerS2">
+                        <div id="infoS">
+                            Situação<div class="info2">Em Produção</div>
+                        </div>
+                        <div id="infoS">
+                            Descoberta<div class="info2">13/06/2008</div>
+                        </div>
+                        <div id="infoS">
+                            Declaração de Comercialidade<div class="info2">29/12/2011</div>
+                        </div>
+                        <div id="infoS">
+                            Início de Produção<div class="info2">05/01/2013</div>
+                        </div>
+                        <div id="infoS">
+                            Previsão de Término de Produção<div class="info2">29/12/2038</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="localizacao">
+                    <div id="fiapoamarelo2"></div>
+                    <div id="fiapoverde2"></div>
+
+                    <div id="tituloLocalizacao">
+                        <div id="tracoAmarelo3"></div>
+                        <h2>Localização </h2>
+                    </div>
+                    <div id="textoLocal">
+                        O Campo de Sapinhoá (Figura 1) localiza-se na porção central da Bacia de Santos, a aproximadamente 360 km da costa do estado
+                        de São Paulo e 290 km da cidade do Rio de Janeiro, em lâmina d'água de 2.140 metros. Sua área de desenvolvimento é de 233 km².
+                    </div>
+                    <div id="imgLocal">
+                        <img src="Images/localizacao.png">
+                        <p>
+                            Figura 1: Mapa de localização do Campo de Sapinhoá (Fonte: ANP)
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="sistema">
+                    <div id="tituloSistema">
+                        <div id="tracoAmarelo4"></div>
+                        <h2>Sistema de Produção e Escoamento </h2>
+                    </div>
+
+
+                    <div id="textoSistema">
+                        A estratégia de explotação adotada baseia-se no desenvolvimento modular do campo de Sapinhoá através de 2 Unidades
+                        Estacionárias de Produção, sendo uma na Área Sul (FPSO Cidade de São Paulo) e outro na área Norte (FPSO Cidade de Ilha Bela).
+                        Para manutenção da pressão média do reservatório está prevista a injeção de água. O escoamento do óleo ocorrerá através de
+                        navios aliviadores para terminais terrestres e oceânicos, ou para o destino final. Já o escoamento de gás natural será efetuado
+                        através do Sistema Integrado de Escoamento (SIE) do Pólo Pré-Sal da Bacia de Santos (PPSBS) composto pelos gasodutos
+                        denominados Rota 1, Rota 2 e Rota 3.
+                    </div>
+                    <div id="layoutpai">
+                        <div id="testelayout">
+
+                            <div id="titulo">
+                                <h2 id="numpocos">NÚMERO DE POÇOS</h2>
+                            </div>
+
+                            <div id="container3">
+
+                                <div id="caixasS">
+                                    <h2 id="lblData">Data referência:</h2>
+                                </div>
+                                <div id="caixasS">
+                                    <h2 id="lblData2">06/2017</h2>
+                                </div>
+                                <div id="caixasS" class="tamletra">Perfurados:</div>
+                                <div id="caixasS" class="tamletra">34</div>
+                                <div id="caixasS" class="tamletra">Produtores:</div>
+                                <div id="caixasS" class="tamletra">17</div>
+                                <div id="caixasS" class="tamletra">Injetores:</div>
+                                <div id="caixasS" class="tamletra">12</div>
+                                <div id="caixasS" class="tamletra">Abandonados:</div>
+                                <div id="caixasS" class="tamletra">05</div>
+                            </div>
+                        </div>
+                        <div id="testelayout2">
+
+                            <div id="titulo2">
+                                <h2 id="capacidade">CAPACIDADE DE PROCESSAMENTO DAS UNIDADES DE PRODUÇÃO</h2>
+                            </div>
+
+                            <div id="container4">
+                                <div id="caixas2">
+                                    <h2>Unidade <span>...........</span></h2>
+                                </div>
+                                <div id="caixas2">
+                                    <h2>Líquido (bbl/d)</h2>
+                                </div>
+                                <div id="caixas2">
+                                    <h2>Petróleo (bbl/d)</h2>
+                                </div>
+                                <div id="caixas2">
+                                    <h2>Gás Natural (Mm³/d)</h2>
+                                </div>
+                                <div id="caixas2" class="tamletra">FPSO Cidade de São Paulo</div>
+                                <div id="caixas2" class="tamletra">150.000</div>
+                                <div id="caixas2" class="tamletra">120.000</div>
+                                <div id="caixas2" class="tamletra">5.000</div>
+                                <div id="caixas2" class="tamletra">FPSO Cidade de Ilha Bela</div>
+                                <div id="caixas2" class="tamletra">150.000</div>
+                                <div id="caixas2" class="tamletra">150.000</div>
+                                <div id="caixas2" class="tamletra">6.000</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="geologia">
+                    <div id="tituloGeologia">
+                        <div id="tracoAmarelo5"></div>
+                        <h2>Geologia da Área e Reservatórios </h2>
+                    </div>
+
+                    <div id="textoGeologia">
+                        Na área do campo de Sapinhoá foi identificado reservatório de Idade Aptiana representado pela formação Barra Velha, constituído
+                        por rochas carbonáticas (microbiolitos) com origem em ambientes lacustres com influência marinha. Tendo em vista a extensão da
+                        acumulação para 4 diferentes áreas vizinhas no entorno no campo, foi assinado um Acordo de Individualização da Produção (AIP).
+                    </div>
+                    <div id="layoutGpai">
+                        <div id="layoutG">
+                            <div id="tituloG">
+                                <h2 id="volumes">VOLUMES</h2>
+                            </div>
+                            <div id="containerG1">
+                                <div id="headerG">
+                                    <h2>Volume Original "in situ"</h2>
+                                </div>
+                                <div id="caixasG" class="tamletra">Perfurados:</div>
+                                <div id="caixasG" class="tamletra">34</div>
+                                <div id="caixasG" class="tamletra">Produtores:</div>
+                                <div id="caixasG" class="tamletra">17</div>
+                                <div id="rodapeG">Ref: BAR 2016</div>
+
+                            </div>
+                        </div>
+
+                        <div id="layoutG2">
+                            <div id="tituloG2">
+                                <h2 id="prod">PRODUÇÃO</h2>
+                            </div>
+                            <div id="containerG2">
+                                <div id="headerG">
+                                    <h2>Produção Acumulada</h2>
+                                </div>
+                                <div id="caixasG2">Petróleo (Milhões de barris)</div>
+                                <div id="caixasG2">193</div>
+                                <div id="caixasG2">Gás Natural (Milhões de M³)</div>
+                                <div id="caixasG2">6741</div>
+                                <div id="rodapeG">Ref: BAR 2016</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="producao">
+                    <div id="tituloProducao">
+                        <div id="tracoAmarelo6"></div>
+                        <h2>Histórico de Produção do Campo de Sapinhoá </h2>
+                    </div>
+                    <div id="imgProducao">
+                        <img src="Images/producao.png" alt="Alternate Text" />
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <p>
+                    Desenvolvido pela turma do PPJA-M1TI-22 de Santos
+                    <br />
+                    @@2023
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

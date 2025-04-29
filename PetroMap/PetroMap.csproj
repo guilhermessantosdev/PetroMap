@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\aviso.png" />
+    <None Include="wwwroot\Images\carrossel1.jpg" />
+    <None Include="wwwroot\Images\carrossel2.jpg" />
+    <None Include="wwwroot\Images\carrossel3.jpg" />
+    <None Include="wwwroot\Images\carrossel4.jpg" />
+    <None Include="wwwroot\Images\flag.png" />
+    <None Include="wwwroot\Images\flagVermelha.png" />
+    <None Include="wwwroot\Images\localizacao.png" />
+    <None Include="wwwroot\Images\mapaSapinhoa.png" />
+    <None Include="wwwroot\Images\petromaplogo.png" />
+    <None Include="wwwroot\Images\plataforma.jpg" />
+    <None Include="wwwroot\Images\producao.png" />
+    <None Include="wwwroot\Images\telaFundo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.4.0" />
+  </ItemGroup>
+
+</Project>
