@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PetroMap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5843e7dc314446eaace93bca1e654f661d0a6d40")]
 [assembly: System.Reflection.AssemblyProductAttribute("PetroMap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PetroMap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
