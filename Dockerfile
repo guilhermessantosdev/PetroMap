@@ -12,7 +12,7 @@ COPY PetroMap.csproj ./PetroMap/
 RUN dotnet restore
 
 # Copiar o restante do código
-COPY . . 
+COPY . .
 
 # Publicar o projeto
 RUN dotnet publish -c Release -o /app/publish
@@ -30,6 +30,3 @@ EXPOSE 8080
 
 # Definir o ponto de entrada
 ENTRYPOINT ["dotnet", "PetroMap.dll"]
-
-
-
